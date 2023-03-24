@@ -4,6 +4,7 @@ This repository contains the PyTorch implementation of the core contribution *Co
 [Context De-confounded Emotion Recognition](https://arxiv.org/pdf/2303.11921.pdf)
 
 ## Abstract
+
 Context-Aware Emotion Recognition (CAER) is a crucial and challenging task that aims to perceive the emotional states of
 the target person with contextual information. Recent approaches invariably focus on designing sophisticated architectures 
 or mechanisms to extract seemingly meaningful representations from subjects and contexts. However, a long-overlooked issue 
@@ -16,8 +17,28 @@ to de-confound the confounder and exploit the true causal effect for model train
 state-of-the-art approaches by considerable margins. Extensive experiments on three benchmark datasets demonstrate the effectiveness of our CCIM 
 and the significance of causal insight.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-</picture>
+![Image text](pipeline.png)
+
+A general pipeline for the context-deconfounded training. The red dotted box shows the core component that achieves the approximation to causal intervention: our **CCIM**. 
+
+## Confounder Dictionary
+
+To build confounder dictionaries from the different datasets required to implement CCIM, you can access [EMOTIC](https://s3.sunai.uoc.edu/emotic/index.html), [CAER-S](https://caer-dataset.github.io/), and [GroupWalk](https://gamma.umd.edu/researchdirections/affectivecomputing/emotionrecognition/emoticon/) to obtain the corresponding training data. Then, the pre-trained backbone on [Places365](https://github.com/CSAILVision/places365) can be used to extract the context feature set.
+Ultimately, you can obtain confounder dictionaries of any size by [clustering operations](https://scikit-learn.org/stable/modules/clustering.html).
+
+## Implementation
+
+In CCIM.py, we provide two implementations of  $\lambda_{i}$ : `dot_product_intervention` and `additive_intervention`. By introducing extracted confounder dictionaries $Z$  and prior probabilities $P(z_{i})$, you can freely insert the CCIM before the classifiers of most CAER models to enjoy the gains from the causal weapon.
+
+## Citation
+
+If you find CCIM useful for your research, please cite the following paper:
+
+```
+@article{yang2023context ,
+  title={Context De-confounded Emotion Recognition},
+  author={Yang, Dingkang and Chen, Zhaoyu and Wang, Yuzheng and Wang, Shunli and Li, Mingcheng and Liu, Siao and Zhao, Xiao and Huang, Shuai and Dong, Zhiyan and Zhai, Peng and Zhang, Lihua },
+  journal={arXiv preprint arXiv:2303.11921},
+  year={2023}
+}
+```
