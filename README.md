@@ -35,9 +35,9 @@ In CCIM.py, we provide two implementations of  $\lambda_{i}$ : `dot_product_inte
 If you find CCIM useful for your research, please cite the following paper:
 
 ```
-@article{yang2023context ,
+@article{yang2023context,
   title={Context De-confounded Emotion Recognition},
-  author={Yang, Dingkang and Chen, Zhaoyu and Wang, Yuzheng and Wang, Shunli and Li, Mingcheng and Liu, Siao and Zhao, Xiao and Huang, Shuai and Dong, Zhiyan and Zhai, Peng and Zhang, Lihua },
+  author={Yang, Dingkang and Chen, Zhaoyu and Wang, Yuzheng and Wang, Shunli and Li, Mingcheng and Liu, Siao and Zhao, Xiao and Huang, Shuai and Dong, Zhiyan and Zhai, Peng and Zhang, Lihua},
   journal={arXiv preprint arXiv:2303.11921},
   year={2023}
 }
