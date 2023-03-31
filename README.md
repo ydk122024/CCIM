@@ -38,7 +38,7 @@ If you find CCIM useful for your research, please cite the following paper:
 @article{yang2023context,
   title={Context De-confounded Emotion Recognition},
   author={Yang, Dingkang and Chen, Zhaoyu and Wang, Yuzheng and Wang, Shunli and Li, Mingcheng and Liu, Siao and Zhao, Xiao and Huang, Shuai and Dong, Zhiyan and Zhai, Peng and Zhang, Lihua},
-  journal={arXiv preprint arXiv:2303.11921},
+  journal={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR2023)},
   year={2023}
 }
 ```
